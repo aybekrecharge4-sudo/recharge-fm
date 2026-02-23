@@ -1,0 +1,85 @@
+/* Pitch Visualizer */
+.pitch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.pitch-container svg {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.pitch-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Player dot interactions */
+.player-dot {
+    transition: transform var(--transition-fast);
+}
+
+.player-dot:hover {
+    transform: scale(1.15);
+}
+
+/* Phase Toggle */
+.phase-toggle {
+    display: inline-flex;
+    background: var(--bg-input);
+    border-radius: var(--radius-full);
+    padding: 3px;
+    gap: 2px;
+}
+
+.phase-toggle-btn {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+    background: none;
+}
+
+.phase-toggle-btn:hover {
+    color: var(--text-secondary);
+}
+
+.phase-toggle-btn.active {
+    background: var(--bg-card);
+    color: var(--accent-primary);
+}
+
+/* Dual formation display */
+.dual-formation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+}
+
+.dual-formation .pitch-container {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .dual-formation {
+        grid-template-columns: 1fr;
+    }
+
+    .dual-formation .pitch-container {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+}
